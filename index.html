@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+
+    <div id="name">
+        <p  v-if="seen">{{ message }}</p>
+        <p>{{ name }}</p>
+        <input v-model="name" v-if="seen">
+        <button v-on:click="hiden"  v-if="seen">Ок</button>
+    </div>
+
+    <div id="app">
+        <p>{{ message }}</p>
+        <input v-model="product">
+        <button v-on:click="input">Ок</button>
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+                <button v-on:click="del(todo)" >Del</button>
+            </li>
+        </ol>
+    </div>
+
+
+</body>
+</html>
